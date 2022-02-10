@@ -3,15 +3,32 @@ import styles from './Button.module.css'
 import { ButtonProps } from './Button.props'
 import cn from 'classnames'
 
-export const Button = ({ children, appearance }: ButtonProps): JSX.Element => {
+export const Button = ({
+  children,
+  appearance,
+  className,
+  arrow = 'none',
+  ...props
+}: ButtonProps): JSX.Element => {
   return (
     <button
-      className={cn(styles.button, {
+      className={cn(styles.button, className, {
         [styles.primary]: appearance === 'primary',
         [styles.ghost]: appearance === 'ghost',
       })}
+      {...props}
     >
       {children}
+      {arrow !== 'none' && (
+        <span
+          className={cn(styles.arrow, {
+            [styles.down]: arrow === 'down',
+            [styles.right]: arrow === 'right',
+          })}
+        >
+          U
+        </span>
+      )}
     </button>
   )
 }
