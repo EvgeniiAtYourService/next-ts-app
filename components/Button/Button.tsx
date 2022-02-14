@@ -2,6 +2,7 @@ import React from 'react'
 import styles from './Button.module.css'
 import { ButtonProps } from './Button.props'
 import cn from 'classnames'
+import ArrowIcon from './arrow.svg'
 
 export const Button = ({
   children,
@@ -26,7 +27,7 @@ export const Button = ({
             [styles.right]: arrow === 'right',
           })}
         >
-          U
+          <ArrowIcon />
         </span>
       )}
     </button>
