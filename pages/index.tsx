@@ -58,11 +58,6 @@ function Home({ menu }: HomeProps): JSX.Element {
         </button>
         <Rating rating={rating} isEditable setRating={setRating} />
       </div>
-      <ul>
-        {menu.map((item) => (
-          <li key={item._id.secondCategory}>{item._id.secondCategory}</li>
-        ))}
-      </ul>
     </>
   )
 }
